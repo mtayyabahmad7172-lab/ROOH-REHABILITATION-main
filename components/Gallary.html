@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Rooh Rehabilitation Center</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: rgb(195, 146, 22);      /* Premium Gold */
+            --accent: #FFFFFF;                 /* White */
+            --healing: #1A1A1A;                /* Card Dark Grey */
+            --dark: #000000;                   /* Pitch Black */
+            --light: #222222;                  /* Borders/Footer */
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--accent);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background-color: rgba(0,0,0,0.95);
+            border-bottom: 1px solid var(--light);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar .logo img {
+            max-height: 55px;
+            filter: drop-shadow(0 0 5px rgba(195, 146, 22, 0.3));
+        }
+
+        .home-btn {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 8px 25px;
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            font-weight: 500;
+            transition: 0.4s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .home-btn:hover {
+            background-color: var(--primary);
+            color: black;
+            box-shadow: 0 0 15px rgba(195, 146, 22, 0.4);
+        }
+        /* --- GALLERY HEADER --- */
+        .gallery-header {
+            height: 350px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../pics/galary/cv2.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .gallery-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        /* --- GALLERY GRID --- */
+        .gallery-section { padding: 80px 0; }
+
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            break-inside: avoid;
+            border: 1px solid var(--light);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            transition: 0.5s ease;
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- OVERLAY STYLING --- */
+        .img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover .img-overlay {
+            opacity: 1;
+        }
+
+        .img-overlay h5 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .img-overlay p {
+            color: #ccc;
+            font-size: 0.85rem;
+            margin: 5px 0 0;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 991px) {
+            .masonry-grid {
+                column-count: 2; /* 2 Columns for Mobile */
+            }
+            .gallery-header h1 { font-size: 2.2rem; }
+        }
+
+        @media (max-width: 576px) {
+            .masonry-grid {
+                column-gap: 10px;
+            }
+            .gallery-item { margin-bottom: 10px; }
+            .img-overlay { padding: 10px; }
+            .img-overlay h5 { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+     <nav class="navbar">
+        <div class="logo">
+            <img src="../pics/logoo.png" alt="Rooh Logo">
+        </div>
+        <a href="../index.html" class="home-btn">Back to Home</a>
+    </nav>
+
+    <header class="gallery-header">
+        <div data-aos="zoom-in">
+            <h1>Our Journey</h1>
+            <p style="color: white; letter-spacing: 2px;">Capturing Excellence in Mental Healthcare</p>
+        </div>
+    </header>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="masonry-grid">
+
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="../pics/galary/ceos.png" alt="Our Leaders">
+                    <div class="img-overlay">
+                        <h5>OUR LEADERS</h5>
+                        <p>The visionaries behind Rooh Rehab.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="../pics/galary/hon.webp" alt="Honored Visit">
+                    <div class="img-overlay">
+                        <h5>HONORED VISIT</h5>
+                        <p>Distinguished guests at our facility.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="../pics/galary/ins.webp" alt="Discussion">
+                    <div class="img-overlay">
+                        <h5>INSIGHTFUL DISCUSSION</h5>
+                        <p>Planning the future of recovery.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="../pics/galary/meet.webp" alt="Meeting">
+                    <div class="img-overlay">
+                        <h5>INSIGHTFUL MEETING</h5>
+                        <p>Collaboration for clinical excellence.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="../pics/galary/MOU.webp" alt="MOU Signing">
+                    <div class="img-overlay">
+                        <h5>MOU SIGNING CEREMONY</h5>
+                        <p>Official partnerships & agreements.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="../pics/galary/dr.png" alt="Dr. Rana Nasir Ali">
+                    <div class="img-overlay">
+                        <h5>WELCOME DR. RANA NASIR ALI (MBBS)</h5>
+                        <p>Strengthening our medical team.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up">
+                    <img src="../pics/galary/ceo-2.png" alt="Milestone">
+                    <div class="img-overlay">
+                        <h5>RECOVERY MILESTONE</h5>
+                        <p>Celebrating success stories.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--light); padding: 40px; text-align: center; border-top: 2px solid var(--primary);">
+        <p style="color: var(--primary); font-weight: 600;">© 2026 ROOH REHABILITATION CENTER</p>
+        <p style="font-size: 0.8rem; color: #888;">Compassion • Healing • Recovery</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+</body>
+</html>

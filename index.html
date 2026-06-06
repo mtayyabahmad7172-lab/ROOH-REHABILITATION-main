@@ -1,0 +1,2508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooh Rehabilitation Center</title>
+    <link rel="icon" type="image/png" href="./images/logoo.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+</head>
+<style>
+    /* ========================
+   Rooh THEME COLORS
+   ======================== */
+    :root {
+        /* --- PREMIUM GOLD & BLACK THEME --- */
+
+        /* 1. Gold (Buttons & Headings k liye) */
+        --primary: rgb(195, 146, 22);
+
+        /* 2. White (Small Text k liye) */
+        --accent: #FFFFFF;
+
+        /* 3. Dark Grey (Cards k background k liye taake Black pe nazar ayein) */
+        --healing: #1A1A1A;
+
+        /* 4. Pitch Black (Main Background) */
+        --dark: #000000;
+
+        /* 5. Soft Black (Footer ya borders k liye) */
+        --light: #222222;
+
+        --font: 'Poppins', sans-serif;
+    }
+
+    body {
+        font-family: var(--font);
+        background-color: var(--dark);
+        overflow-x: hidden;
+    }
+
+    /* ========================
+   NAVBAR
+   ======================== */
+    .custom-navbar {
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 15px 0;
+        color: white;
+    }
+
+    .logo-img {
+        height: 50px;
+        width: auto;
+    }
+
+    .nav-link {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--primary);
+    }
+
+    .btn-sukoon {
+        background: var(--primary);
+        color: white;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(1, 16, 39, 0.2);
+    }
+
+    .btn-sukoon:hover {
+        background: var(--dark);
+        color: var(--primary);
+        transform: translateY(-2px);
+    }
+
+    #book:hover {
+        color: var(--primary);
+    }
+
+    /* ========================
+   HERO SECTION
+   ======================== */
+    .hero-section {
+        padding-top: 120px;
+        padding-bottom: 80px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #000000 0%, #000000 100%);
+        /* Black Theme */
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* --- LEFT TEXT STYLING (Same as before) --- */
+    .tagline {
+        color: var(--primary);
+        /* Gold */
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        background: rgba(212, 175, 55, 0.15);
+        padding: 5px 15px;
+        border-radius: 30px;
+        width: fit-content;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #ffffff;
+        /* White Text */
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .highlight {
+        color: var(--primary);
+        position: relative;
+        display: inline-block;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 35px;
+        max-width: 500px;
+        line-height: 1.6;
+    }
+
+    /* Buttons */
+    .hero-btns {
+        display: flex;
+        gap: 15px;
+    }
+
+    .btn-primary-hero {
+        background: var(--primary);
+        color: #000;
+        padding: 14px 35px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(195, 146, 22, 0.3);
+    }
+
+    .btn-secondary-hero {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .btn-primary-hero:hover {
+        background: #fff;
+        transform: translateY(-3px);
+        color: #000;
+    }
+
+    .btn-secondary-hero:hover {
+        background: var(--primary);
+        color: #000;
+    }
+
+    /* Badges */
+    .trust-badges {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .badge-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .badge-item i {
+        font-size: 2rem;
+        color: var(--primary);
+    }
+
+    .badge-item h5 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0;
+        color: #fff;
+    }
+
+    .badge-item small {
+        font-size: 0.85rem;
+        color: #999;
+    }
+
+    .divider {
+        width: 1px;
+        height: 40px;
+        background: #333;
+    }
+
+
+    /* ========================
+   RIGHT SIDE: 3D ROTATING BOXES (New CSS)
+   ======================== */
+    .hero-visual {
+        height: 500px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        perspective: 1200px;
+        /* 3D Depth */
+    }
+
+    /* Watermark Background (Fixed) */
+    .watermark-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        opacity: 0.1;
+        /* Very Faint */
+        pointer-events: none;
+        width: 350px;
+    }
+
+    .watermark-bg img {
+        width: 100%;
+        height: auto;
+        filter: grayscale(100%) brightness(2);
+    }
+
+    /* Scene Container */
+    .carousel-scene {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+    }
+
+    /* Rotating Ring */
+    .carousel-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        animation: rotateRing 20s linear infinite;
+    }
+
+    /* The Box Cards */
+    .carousel-card {
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        background: rgba(20, 20, 20, 0.95);
+        /* Black Glass */
+        border: 2px solid var(--primary);
+        /* Gold Border */
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+
+        /* Center positioning logic */
+        left: 50%;
+        top: 50%;
+        margin-left: -80px;
+        margin-top: -80px;
+        backface-visibility: hidden;
+    }
+
+    .icon-gold {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+    }
+
+    .carousel-card span {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Positions (360 / 6 = 60 degrees) */
+    .card-1 {
+        transform: rotateY(0deg) translateZ(300px);
+    }
+
+    .card-2 {
+        transform: rotateY(60deg) translateZ(300px);
+    }
+
+    .card-3 {
+        transform: rotateY(120deg) translateZ(300px);
+    }
+
+    .card-4 {
+        transform: rotateY(180deg) translateZ(300px);
+    }
+
+    .card-5 {
+        transform: rotateY(240deg) translateZ(300px);
+    }
+
+    .card-6 {
+        transform: rotateY(300deg) translateZ(300px);
+    }
+
+    /* Animation */
+    @keyframes rotateRing {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+
+    /* Hover Pause */
+    .hero-visual:hover .carousel-ring {
+        animation-play-state: paused;
+    }
+
+    /* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+    @media (max-width: 991px) {
+        .hero-section {
+            padding-top: 100px;
+            text-align: center;
+            height: auto;
+        }
+
+        .hero-row {
+            flex-direction: column;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+        }
+
+        .tagline {
+            margin: 0 auto 20px;
+        }
+
+        .hero-btns,
+        .trust-badges {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Mobile Animation Adjustments */
+        .hero-visual {
+            height: 400px;
+            margin-top: 50px;
+            width: 100%;
+            perspective: 800px;
+        }
+
+        .watermark-bg {
+            width: 250px;
+        }
+
+        /* Make boxes smaller on mobile */
+        .carousel-card {
+            width: 130px;
+            height: 130px;
+            margin-left: -65px;
+            margin-top: -65px;
+        }
+
+        .icon-gold {
+            font-size: 2rem;
+        }
+
+        .carousel-card span {
+            font-size: 0.8rem;
+        }
+
+        /* Reduce Radius so it fits on screen */
+        .card-1 {
+            transform: rotateY(0deg) translateZ(190px);
+        }
+
+        .card-2 {
+            transform: rotateY(60deg) translateZ(190px);
+        }
+
+        .card-3 {
+            transform: rotateY(120deg) translateZ(190px);
+        }
+
+        .card-4 {
+            transform: rotateY(180deg) translateZ(190px);
+        }
+
+        .card-5 {
+            transform: rotateY(240deg) translateZ(190px);
+        }
+
+        .card-6 {
+            transform: rotateY(300deg) translateZ(190px);
+        }
+    }
+</style>
+<style>
+    /* ========================
+   WHATSAPP FLOATING BUTTON
+   ======================== */
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background-color: #38c01dff;
+        /* WhatsApp Official Green */
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 32px;
+        box-shadow: 0 4px 15px var(--primary);
+        z-index: 9999;
+        /* Sabse upar rahega */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        animation: pulse-green 2s infinite;
+        /* Dhadkan effect */
+    }
+
+    .whatsapp-btn:hover {
+        background-color: #1da851;
+        /* Thoda dark green hover pe */
+        transform: scale(1.1);
+        /* Thoda bada hoga */
+        color: white;
+    }
+
+    /* Animation Keyframes */
+    @keyframes pulse-green {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+
+        70% {
+            box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+    }
+
+    /* Mobile ke liye thoda adjustment (Optional) */
+    @media (max-width: 576px) {
+        .whatsapp-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 26px;
+            bottom: 20px;
+            right: 20px;
+        }
+    }
+</style>
+<!--drugssssssssss-->
+<style>
+    /* ========================
+   DRUG AWARENESS (HYBRID: Expand & Flip)
+   ======================== */
+    .drug-awareness-section {
+        padding: 0 0 80px 0;
+        background-color: var(--dark);
+    }
+
+    /* -----------------------------
+   DESKTOP STYLES (HOVER EXPAND)
+   ----------------------------- */
+    @media (min-width: 992px) {
+
+        /* Rows Container */
+        .drugs-row {
+            display: flex;
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 10px;
+            justify-content: center;
+            height: 250px;
+            /* Fixed Height */
+        }
+
+        /* Card styling */
+        .drug-card {
+            flex: 1;
+            /* Sab barabar */
+            border-radius: 15px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-front {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            z-index: 2;
+        }
+
+        /* --- HOVER EXPAND --- */
+        .drug-card:hover {
+            flex: 3;
+            /* Hover pe chora ho jaye */
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Heading Animation */
+        .card-front h3 {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            z-index: 2;
+            font-weight: 800;
+            transition: 0.4s;
+        }
+
+        .drug-card:hover .card-front h3 {
+            bottom: auto;
+            top: 20px;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        /* Back Content (Hidden initially) */
+        .card-back {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            opacity: 0;
+            transition: 0.5s ease;
+            z-index: 3;
+            color: rgb(255, 255, 255);
+            pointer-events: none;
+        }
+
+        .drug-card:hover .card-back {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Overlay */
+        .drug-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #d4af37af, transparent);
+        }
+
+        /* Desktop par Back side k elements ko adjust karna */
+        .card-back h3 {
+            display: none;
+        }
+
+        /* Front wala heading kafi hai */
+    }
+
+    /* -----------------------------
+   MOBILE STYLES (GRID & FLIP)
+   ----------------------------- */
+    @media (max-width: 991px) {
+
+        /* Dono Rows ko Grid bana do */
+        .drugs-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* 2 Cards per line */
+            gap: 15px;
+            padding: 0 15px;
+            margin-bottom: 15px;
+        }
+
+        /* 3D Flip Setup */
+        .drug-card {
+            background-color: transparent;
+            height: 220px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        /* Flip Class (JS se add hogi) */
+        .drug-card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front & Back Faces */
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            /* Peeche wala hissa chup jaye */
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Front Side (Image) */
+        .card-front {
+            background-color: #bbb;
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .card-front h3 {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            font-size: 1rem;
+            background: rgba(162, 152, 8, 0.8);
+            padding: 5px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        /* Back Side (Info - Rotated) */
+        .card-back {
+            background-color: var(--secondary);
+            /* Green BG */
+            color: rgb(252, 252, 252);
+            transform: rotateY(180deg);
+            /* Pehle se ulta rakho */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .card-back h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+            display: block;
+            /* Mobile pe dikhana hai */
+        }
+
+        .card-back .impact {
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        .card-back ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .card-back li {
+            font-size: 0.75rem;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-back i {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .drug-overlay {
+            display: none;
+        }
+
+        /* Mobile flip pe overlay nahi chahiye */
+    }
+</style>
+<!--impactttttt-->
+<style>
+    /* ========================
+   IMPACT SECTION (ROTATING CIRCLES)
+   ======================== */
+    .impact-section {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+        /* Halka Grey BG */
+    }
+
+    .section-subtitle {
+        color: var(--primary);
+        /* Blue */
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 13px;
+        display: block;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin-bottom: 15px;
+    }
+
+    .section-desc {
+        font-size: 1rem;
+        color: #666;
+        max-width: 500px;
+        line-height: 1.6;
+    }
+
+    /* --- CIRCLE WRAPPER --- */
+    .impact-circle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .circle-wrapper {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* --- ROTATING RING (Ghoomne wala hissa) --- */
+    .spinning-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 4px solid transparent;
+        border-top-color: var(--primary);
+        /* Blue */
+        border-right-color: var(--healing);
+        /* Green */
+        border-bottom-color: var(--accent);
+        /* Red */
+        border-left-color: var(--primary);
+        animation: spin 2s linear infinite;
+        /* Ghoomne ki speed */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Rotation Animation */
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Inner Content (Static) */
+    .circle-content {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .counter-value {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin: 0;
+    }
+
+    .circle-content span {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--accent);
+        /* Red Plus */
+        margin-left: 2px;
+    }
+
+    .impact-circle p {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #555;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .impact-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .section-desc {
+            margin: 0 auto 30px;
+        }
+
+        .circle-wrapper {
+            width: 110px;
+            height: 110px;
+        }
+
+        .circle-content {
+            width: 95px;
+            height: 95px;
+        }
+
+        .counter-value {
+            font-size: 1.8rem;
+        }
+    }
+</style>
+<!--LIFeeeeeeeeee-->
+<style>
+    /* ========================
+   LIFE AT rooh SECTION
+   ======================== */
+    .life-at-sukoon-section {
+        padding: 80px 0;
+        background-color: #000000;
+        /* Very Light Grey BG */
+    }
+
+    /* --- CARD STYLING --- */
+    .life-card {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        height: 250px;
+        /* Fixed height */
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .life-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    /* Hover Effect: Zoom Image */
+    .life-card:hover .life-img {
+        transform: scale(1.1);
+    }
+
+    /* --- OVERLAY STYLING (Green & Blue Theme) --- */
+    .life-overlay {
+        position: absolute;
+        bottom: -100%;
+        /* Initially Hidden below */
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Green to Transparent Gradient */
+        background: linear-gradient(to top, #d4af3770 20%, #d4af3770 60%, transparent 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+        transition: bottom 0.4s ease-in-out;
+    }
+
+    /* Hover Effect: Show Overlay */
+    .life-card:hover .life-overlay {
+        bottom: 0;
+    }
+
+    .life-overlay h4 {
+        color: #fff;
+        /* White Heading */
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        text-transform: uppercase;
+    }
+
+    .life-overlay p {
+        color: #eee;
+        /* Light Text */
+        font-size: 0.85rem;
+        margin: 0;
+        font-weight: 300;
+    }
+
+    /* Button */
+    .btn-sukoon {
+        background: var(--primary);
+        /* Blue */
+        color: white;
+        padding: 10px 30px;
+        border-radius: 50px;
+        border: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn-sukoon:hover {
+        background: var(--secondary);
+        /* Dark Blue */
+        transform: translateY(-2px);
+    }
+
+    /* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+    @media (max-width: 991px) {
+
+        /* Mobile Grid: 2 Cards Side-by-Side */
+        .life-card {
+            height: 200px;
+            /* Height kam taake fit aye */
+        }
+
+        .life-overlay h4 {
+            font-size: 0.9rem;
+        }
+
+        .life-overlay p {
+            font-size: 0.75rem;
+        }
+    }
+</style>
+<!--CEoooooooo-->
+<style>
+    .team-section {
+        padding: 80px 0;
+        background-color: #ffffff;
+    }
+
+    .team-member {
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+        border-radius: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .team-member {
+            margin-bottom: 30px;
+        }
+    }
+
+    .img-wrapper {
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+
+    .member-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .member-info .name {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 5px;
+    }
+
+    .member-info .role {
+        font-size: 1rem;
+        color: var(--primary);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    /* --- SOCIAL ICONS --- */
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #f4f4f4;
+        color: var(--dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        text-decoration: none;
+        transition: 0.3s ease;
+    }
+
+    .icon-btn:hover {
+        color: white;
+        transform: translateY(-3px);
+    }
+
+    .instagram:hover {
+        background: #E1306C;
+    }
+
+    .facebook:hover {
+        background: #1877F2;
+    }
+
+    .youtube:hover {
+        background: #FF0000;
+    }
+
+    .tiktok:hover {
+        background: #000000;
+    }
+
+    @media (max-width: 768px) {
+        .img-wrapper {
+            height: 350px;
+        }
+
+        .member-info .name {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+<!--viedooooooo-->
+<style>
+    /* Main Section */
+    .mission-section {
+        padding: 80px 20px;
+        background-color: var(--dark);
+        /* Pitch Black background */
+        color: var(--accent);
+        /* White text */
+    }
+
+    /* Flexbox Layout: Left Video, Right Text */
+    .mission-section .content-container {
+        display: flex;
+        align-items: center;
+        /* Dono ko vertically center karega */
+        justify-content: space-between;
+        gap: 50px;
+        /* Video aur text k darmiyan faasla */
+        max-width: 1200px;
+        margin: 0 auto;
+        /* Center the container */
+    }
+
+    /* Left: Video Box (50% Space) */
+    .mission-section .video-box {
+        flex: 1;
+        width: 100%;
+        border-radius: 15px;
+        /* Thora gol corner */
+        overflow: hidden;
+        border: 2px solid var(--light);
+        /* Halka sa border */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .mission-section .main-video {
+        width: 100%;
+        height: 500px;
+        display: block;
+        /* Extra space remove karne k liye */
+        object-fit: cover;
+    }
+
+    /* Right: Text Box (50% Space) */
+    .mission-section .text-box {
+        flex: 1;
+    }
+
+    .mission-section .sub-heading {
+        color: var(--primary);
+        /* Gold color */
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .mission-section h2 {
+        font-size: 38px;
+        margin-bottom: 20px;
+        color: var(--accent);
+    }
+
+    .mission-section p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        color: #cccccc;
+        /* Thora dim white taake aankhon pe na lagay */
+    }
+
+    /* Features List (Ticks) */
+    .mission-section .features-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .mission-section .f-item {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .mission-section .f-item i {
+        color: var(--primary);
+        /* Ticks ko Gold kar diya */
+        margin-right: 12px;
+        font-size: 20px;
+    }
+
+    .features-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        /* Har point k darmiyan fasla */
+    }
+
+    .f-item {
+        display: flex;
+        align-items: flex-start;
+        /* Tick ko hamesha pehli line k sath upar rakhe ga */
+        gap: 12px;
+        /* Tick aur Text k darmiyan fasla */
+    }
+
+    .f-item i {
+        flex-shrink: 0;
+        /* YE SAB SE ZAROORI HAI: Taake text lamba ho to tick chota/dab na jaye */
+        margin-top: 4px;
+        /* Tick ko text k bilkul center mein lane k liye thora sa adjust kiya */
+        color: var(--primary);
+        /* Tumhara gold color */
+    }
+
+    /* ========================================= */
+    /* MOBILE RESPONSIVE (Stack on small screens) */
+    /* ========================================= */
+    @media (max-width: 900px) {
+        .mission-section .content-container {
+            flex-direction: column;
+            /* Mobile par upar neechay kar dega */
+            text-align: center;
+            /* Mobile par text center acha lagta hai */
+            gap: 40px;
+        }
+
+        .mission-section .features-list {
+            align-items: center;
+            /* Ticks ko bhi center kar dega */
+        }
+    }
+</style>
+<!--footerrrrr-->
+<style>
+    .footer-section {
+        background-color: #000000;
+        /* Deep Dark Green Background (Theme Match) */
+        padding: 80px 0 30px;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        position: relative;
+        border-top: 5px solid #D4AF37;
+        /* Gold Top Border (Optional) */
+    }
+
+    /* --- LOGO --- */
+    .footer-logo img {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 15px;
+    }
+
+    /* --- TEXT --- */
+    .text-white-50 {
+        color: rgba(255, 255, 255, 0.7) !important;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* --- HEADINGS --- */
+    h5.text-white {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 25px !important;
+    }
+
+    /* Heading Underline (Green/Gold) */
+    h5.text-white::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 40px;
+        height: 3px;
+        background-color: var(--primary);
+        /* Healing Green */
+        border-radius: 2px;
+    }
+
+    /* --- LINKS LIST --- */
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        display: inline-block;
+    }
+
+    /* Hover Effect */
+    .footer-links a:hover {
+        color: #fff;
+        transform: translateX(5px);
+        /* Slide Right */
+        color: #b32a2a;
+        /* Gold Hover */
+    }
+
+    /* --- CONTACT INFO --- */
+    .contact-info li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .contact-info i {
+        margin-top: 5px;
+        color: #c62020;
+        /* Green Icons */
+        font-size: 1.1rem;
+    }
+
+    /* --- SOCIAL ICONS --- */
+    .social-links a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+        background-color: var(--primary);
+        /* Green BG on Hover */
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(199, 218, 25, 0.3);
+    }
+
+    /* --- MAP STYLING --- */
+    .footer-map iframe {
+        border: 4px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
+
+    .footer-map iframe:hover {
+        border-color: #b09226 !important;
+    }
+
+    /* --- COPYRIGHT BAR --- */
+    .border-top {
+        border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .text-primary {
+        color: var(--primary) !important;
+        /* Gold for 'Designed by' */
+        font-weight: 700;
+    }
+
+    /* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+    @media (max-width: 768px) {
+        .footer-section {
+            padding: 60px 0 20px;
+            text-align: center;
+            /* Mobile pe sab center */
+        }
+
+        /* Headings Center */
+        h5.text-white::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Contact Info Center */
+        .contact-info li {
+            justify-content: center;
+        }
+
+        /* Social Icons Center */
+        .social-links {
+            justify-content: center;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Bottom Bar Stack */
+        .col-md-6.text-md-end {
+            text-align: center !important;
+            margin-top: 15px;
+        }
+    }
+
+    /* Core Services Section Styling */
+    .core-services-section {
+        padding: 60px 20px;
+        background-color: #f8fcfd;
+        /* Light theme background matching rehab sites */
+        font-family: 'Poppins', sans-serif;
+        /* Update font if your theme uses different one */
+    }
+
+    .core-services-section .section-heading {
+        margin-bottom: 50px;
+    }
+
+    .core-services-section .section-heading h2 {
+        font-size: 2.5rem;
+        color: #1a3c5a;
+        /* Theme dark blue/teal */
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .core-services-section .section-heading p {
+        color: #667;
+        font-size: 1.1rem;
+    }
+
+    /* Grid Layout */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Individual Card Styling */
+    .service-card {
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        text-decoration: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Image Wrapper & Animation */
+    .card-image-wrapper {
+        position: relative;
+        height: 240px;
+        overflow: hidden;
+    }
+
+    .card-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    /* ========== PREMIUM CARD STYLING ==========  */
+
+    /* Link Reset */
+    .service-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    /* Main Card Container */
+    .premium-service-card {
+        background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        border: 1px solid rgba(195, 146, 22, 0.2);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+    }
+
+    /* Hover: Card Lift + Glow */
+    .service-card-link:hover .premium-service-card {
+        transform: translateY(-15px) scale(1.02);
+        border-color: var(--primary);
+        box-shadow: 0 20px 60px rgba(195, 146, 22, 0.4),
+            0 0 40px rgba(195, 146, 22, 0.3);
+    }
+
+    /* === IMAGE SECTION === */
+    .card-img-container {
+        position: relative;
+        height: 240px;
+        overflow: hidden;
+    }
+
+    .card-service-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+        filter: brightness(0.8);
+    }
+
+    /* Hover: Zoom Image */
+    .service-card-link:hover .card-service-img {
+        transform: scale(1.15);
+        filter: brightness(1);
+    }
+
+    /* Golden Overlay */
+    .golden-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(195, 146, 22, 0.3) 100%);
+        pointer-events: none;
+    }
+
+    /* Floating Icon */
+    .floating-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: rgba(0, 0, 0, 0.7);
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: var(--primary);
+        transition: all 0.4s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Hover: Icon Spin */
+    .service-card-link:hover .floating-icon {
+        transform: rotate(360deg) scale(1.1);
+        background: var(--primary);
+        color: #000;
+    }
+
+    /* === CONTENT SECTION === */
+    .card-service-content {
+        padding: 30px 25px;
+    }
+
+    .service-heading {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 15px;
+        transition: color 0.3s ease;
+    }
+
+    .service-card-link:hover .service-heading {
+        color: #fff;
+        text-shadow: 0 0 10px rgba(195, 146, 22, 0.5);
+    }
+
+    .service-description {
+        font-size: 14px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 20px;
+    }
+
+    /* Read More Link */
+    .read-more-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--primary);
+        transition: gap 0.3s ease;
+    }
+
+    /* Hover: Arrow Slide */
+    .service-card-link:hover .read-more-link {
+        gap: 15px;
+    }
+
+    .arrow-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .service-card-link:hover .arrow-icon {
+        transform: translateX(5px);
+    }
+
+    /* === SHINE EFFECT === */
+    .shine-effect {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 70%);
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    /* Hover: Shine Sweep */
+    .service-card-link:hover .shine-effect {
+        left: 100%;
+        opacity: 1;
+    }
+
+    /* === MOBILE RESPONSIVE === */
+    @media (max-width: 991px) {
+        .premium-service-card {
+            margin-bottom: 20px;
+        }
+
+        .card-img-container {
+            height: 200px;
+        }
+
+        .service-heading {
+            font-size: 20px;
+        }
+
+        .service-description {
+            font-size: 13px;
+        }
+
+        .floating-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .card-service-content {
+            padding: 20px 18px;
+        }
+    }
+</style>
+
+<body>
+
+    <nav class="navbar custom-navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand logo-wrapper" href="#">
+                <img src="./pics/logoo.png" alt="Rooh Logo" class="logo-img">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sukoonMenu">
+                <span class="fa-solid fa-bars-staggered text-primary"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="sukoonMenu">
+                <ul class="navbar-nav gap-4 align-items-center">
+                    <li class="nav-item"><a href="./components/about.html" class="nav-link  ">About Us</a></li>
+                    <li class="nav-item"><a href="./components/services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="./components/Team.html" class="nav-link">Our Team</a></li>
+                    <li class="nav-item"><a href="./components/Treat.html" class="nav-link">Our Treatment</a></li>
+                    <li class="nav-item"><a href="./components/Gallary.html" class="nav-link">Gallary</a></li>
+                    <li class="nav-item" id="book">
+
+                        <button id="myBookBtn" class="btn-sukoon">Book appointment</button>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-section">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center hero-row">
+
+                <div class="col-lg-6 hero-text" data-aos="fade-right">
+                    <span class="tagline">
+                        <i class="fa-solid fa-heart-pulse"></i> ROOH REHABILITATION
+                    </span>
+
+                    <h1>Take a brave step towards <br> <span class="highlight">hope, healing, and the life </span> you
+                        deserve.</h1>
+
+                    <p class="text-center text-lg-start mx-auto mx-lg-0"
+                        style="width: 100%; max-width: 385px; color: rgba(255, 255, 255, 0.85); line-height: 1.6; margin-bottom: 30px;">
+                        Rooh Rehabilitation Center offers specialized, evidence-based rehabilitation services designed
+                        to support clients in achieving sustainable recovery and comprehensive mental health
+                        restoration.
+                    </p>
+                    <div class="hero-btns">
+                        <a id="heroBookBtn" class="btn-primary-hero">
+                            Get Help Now <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#mission-video" class="btn-secondary-hero"><i class="fa-solid fa-circle-play"></i> How
+                            We Work</a>
+                    </div>
+
+                    <div class="trust-badges mt-5">
+                        <div class="badge-item">
+                            <i class="fa-solid fa-user-doctor" style="color: var(--primary);"></i>
+                            <div>
+                                <h5>Expert Dean</h5>
+                                <small>24/7 Available</small>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="badge-item">
+                            <i class="fa-solid fa-shield-heart" style="color: var(--primary);"></i>
+                            <div>
+                                <h5>100% Private</h5>
+                                <small>Confidential Care</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 hero-visual position-relative" data-aos="fade-left">
+
+                    <div class="watermark-bg">
+                        <img src="./pics/fav-sparow.png" alt="Watermark">
+                    </div>
+
+                    <div class="carousel-scene">
+                        <div class="carousel-ring">
+
+                            <div class="carousel-card card-1">
+                                <i class="fa-solid fa-droplet-slash icon-gold"></i>
+                                <span>Detox</span>
+                            </div>
+
+                            <div class="carousel-card card-2">
+                                <i class="fa-solid fa-comments icon-gold"></i>
+                                <span>Therapy</span>
+                            </div>
+
+                            <div class="carousel-card card-3">
+                                <i class="fa-solid fa-person-walking-arrow-right icon-gold"></i>
+                                <span>Rehab</span>
+                            </div>
+
+                            <div class="carousel-card card-4">
+                                <i class="fa-solid fa-house-chimney-user icon-gold"></i>
+                                <span>Aftercare</span>
+                            </div>
+
+                            <div class="carousel-card card-5">
+                                <i class="fa-solid fa-brain icon-gold"></i>
+                                <span>Psychiatry</span>
+                            </div>
+
+                            <div class="carousel-card card-6">
+                                <i class="fa-solid fa-spa icon-gold"></i>
+                                <span>Wellness</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!-- Whatsapp Floating Button -->
+    <a href="https://wa.me/923393217672" class="whatsapp-btn" target="_blank" title="Chat with us">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <!--drugsss-->
+    <section class="drug-awareness-section">
+        <div class="container-fluid px-0">
+
+            <div class="text-center mb-5 mt-5">
+                <span class="section-subtitle">The Reality</span>
+                <h2 class="section-title" style="color: var(--accent);">Know The Danger</h2>
+            </div>
+
+            <!-- ========== 3 PREMIUM SERVICE CARDS ========== -->
+            <div class="container mt-5 mb-5">
+                <div class="row g-4 justify-content-center">
+
+                    <!-- 🟢 CARD 1: Psychological Services -->
+                    <div class="col-lg-4 col-md-6">
+                        <a href="./components/services.html" class="service-card-link">
+                            <div class="premium-service-card" data-aos="fade-up" data-aos-delay="100">
+                                <!-- Image Section -->
+                                <div class="card-img-container">
+                                    <img src=" https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800"
+                                        alt="Psychological Services" class="card-service-img">
+                                    <div class="golden-overlay"></div>
+
+                                    <!-- Floating Icon -->
+                                    <div class="floating-icon">
+                                        <i class="fa-solid fa-brain"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Content Section -->
+                                <div class="card-service-content">
+                                    <h3 class="service-heading">Psychological Services</h3>
+                                    <p class="service-description">
+                                        Professional psychotherapy, CBT, anxiety treatment, depression management,
+                                        OCD therapy and psychiatric consultation from qualified licensed experts.
+                                    </p>
+
+                                    <!-- Read More Link -->
+                                    <div class="read-more-link">
+                                        <span>Explore Services</span>
+                                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Shine Effect on Hover -->
+                                <div class="shine-effect"></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 🟢 CARD 2: Substance Addiction -->
+                    <div class="col-lg-4 col-md-6">
+                        <a href="./components/services.html#Addiction" class="service-card-link">
+                            <div class="premium-service-card" data-aos="fade-up" data-aos-delay="200">
+                                <div class="card-img-container">
+                                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format
+
+" alt="Substance Addiction Treatment" class="card-service-img">
+                                    <div class="golden-overlay"></div>
+
+                                    <div class="floating-icon">
+                                        <i class="fa-solid fa-hand-holding-medical"></i>
+                                    </div>
+                                </div>
+
+                                <div class="card-service-content">
+                                    <h3 class="service-heading">Substance Addiction</h3>
+                                    <p class="service-description">
+                                        Evidence-based treatment for heroin, cannabis, cocaine, alcohol addiction
+                                        with 24/7 medical supervision and comprehensive care programs.
+                                    </p>
+
+                                    <div class="read-more-link">
+                                        <span>Explore Treatment</span>
+                                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                                    </div>
+                                </div>
+
+                                <div class="shine-effect"></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- 🟢 CARD 3: Behaviour Addiction -->
+                    <div class="col-lg-4 col-md-6">
+                        <a href="./components/services.html#Addiction" class="service-card-link">
+                            <div class="premium-service-card" data-aos="fade-up" data-aos-delay="300">
+                                <div class="card-img-container">
+                                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format"
+                                        alt="Behaviour Addiction Recovery" class="card-service-img">
+                                    <div class="golden-overlay"></div>
+
+                                    <div class="floating-icon">
+                                        <i class="fa-solid fa-gamepad"></i>
+                                    </div>
+                                </div>
+
+                                <div class="card-service-content">
+                                    <h3 class="service-heading">Behaviour Addiction</h3>
+                                    <p class="service-description">
+                                        Specialized programs for gaming, gambling, internet, pornography addiction
+                                        and all process-based behavioral disorders with proven results.
+                                    </p>
+
+                                    <div class="read-more-link">
+                                        <span>Explore Program</span>
+                                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                                    </div>
+                                </div>
+
+                                <div class="shine-effect"></div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ========== PREMIUM CARD STYLING ========== -->
+
+
+
+    </section><!-- Mobile Flip Script -->
+    <script>
+        function flipCard(card) {
+            // Sirf mobile screen (less than 992px) par flip chalega
+            if (window.innerWidth < 992) {
+                card.classList.toggle('flipped');
+            }
+        }
+    </script>
+    <!--impacttttttt-->
+    <section class="impact-section" id="impact">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+
+                <!-- Left: Text -->
+                <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right">
+                    <span class="section-subtitle">Our Impact</span>
+                    <h2 class="section-title">Rebuilding Lives, Step by Step</h2>
+                    <p class="section-desc mx-auto mx-lg-0">
+                        We have helped countless individuals achieve lasting recovery, leading them toward a healthier,
+                        drug-free life. Our proven results reflect our unwavering commitment to care and healing.
+                    </p>
+                </div>
+
+                <!-- Right: Rotating Counters -->
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="row justify-content-center g-4">
+
+                        <!-- Counter 1: Successful Cases -->
+                        <div class="col-6 col-sm-4">
+                            <div class="impact-circle">
+                                <div class="circle-wrapper">
+                                    <div class="spinning-ring"></div> <!-- Ghoomne wala ring -->
+                                    <div class="circle-content">
+                                        <h3 class="counter-value" data-target="200">0</h3>
+                                        <span>+</span>
+                                    </div>
+                                </div>
+                                <p class="mt-3">Clients Deal</p>
+                            </div>
+                        </div>
+
+                        <!-- Counter 2: Recovered Patients -->
+                        <div class="col-6 col-sm-4">
+                            <div class="impact-circle">
+                                <div class="circle-wrapper">
+                                    <div class="spinning-ring"></div>
+                                    <div class="circle-content">
+                                        <h3 class="counter-value" data-target="58">0</h3>
+                                        <span>+</span>
+                                    </div>
+                                </div>
+                                <p class="mt-3">Recovered Clients</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section> <!-- Counter Script -->
+    <script>
+        // Jab user scroll kar k section par aye tab animation shuru ho
+        const counters = document.querySelectorAll('.counter-value');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Intersection Observer to trigger animation on scroll
+        let options = { threshold: 0.5 };
+        let observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        document.querySelectorAll('.impact-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <!--videoooooooooo-->
+    <section class="mission-section" id="mission-video">
+        <div class="content-container">
+
+            <div class="video-box">
+                <video autoplay controls muted loop playsinline class="main-video">
+                    <source src="./pics/journy.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="text-box">
+                <span class="sub-heading">Our Mission</span>
+                <h2>Path to Recovery</h2>
+                <p>At Rooh Rehabilitation, we go beyond physical healing—we rebuild hope. Our holistic approach empowers
+                    individuals to overcome challenges, grow stronger, and embrace a more meaningful life.</p>
+
+                <div class="features-list">
+                    <div class="f-item"><i class="fa-solid fa-check"></i>To provide comprehensive, evidence-based
+                        addiction and mental health treatment.</div>
+                    <div class="f-item"><i class="fa-solid fa-check"></i>To promote recovery through compassion,
+                        structure, and therapeutic excellence.</div>
+                    <div class="f-item"><i class="fa-solid fa-check"></i>To support families in understanding addiction
+                        as a treatable condition.</div>
+                    <div class="f-item"><i class="fa-solid fa-check"></i>To reduce stigma associated with mental health
+                        and substance use disorders in our community.</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--lifeeeeeeeeee-->
+    <section class="life-at-sukoon-section" id="life-at-sukoon">
+        <div class="container">
+
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <span class="section-subtitle">Our Environment</span>
+                <h2 class="section-title" style="color: var(--accent);">Life at ROOH</h2>
+            </div>
+
+            <div class="row g-3 justify-content-center">
+
+                <!-- --- INITIAL 4 VISIBLE IMAGES --- -->
+
+                <!-- 1. Hospital / Location -->
+                <div class="col-lg-3 col-6">
+                    <div class="life-card">
+                        <img src="./pics/Life-at-rooh/place.jpeg" alt="Hospital Location" class="life-img">
+                        <div class="life-overlay">
+                            <h4>Exercise Hall</h4>
+                            <p>Peaceful Location</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Beds / Room -->
+                <div class="col-lg-3 col-6">
+                    <div class="life-card">
+                        <img src="./pics/Life-at-rooh/VIP-room.jpeg" alt="Patient Beds" class="life-img">
+                        <div class="life-overlay">
+                            <h4>Luxury Rooms</h4>
+                            <p>Comfortable Stay</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Counter / Reception -->
+                <div class="col-lg-3 col-6">
+                    <div class="life-card">
+                        <img src="./pics/Life-at-rooh/h2.jpeg" alt="Reception" class="life-img">
+                        <div class="life-overlay">
+                            <h4>Baranda</h4>
+                            <p>Professional Management Hub</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Deal with Patient -->
+                <div class="col-lg-3 col-6">
+                    <div class="life-card">
+                        <img src="./pics/Life-at-rooh/conceling.jpeg" alt="Patient Care" class="life-img">
+                        <div class="life-overlay">
+                            <h4>Counciling Room</h4>
+                            <p>Supportive Therapy Sessions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- --- HIDDEN IMAGES (Initially Hidden) --- -->
+
+                <div class="col-12 hidden-gallery" style="display: none;">
+                    <div class="row g-3 justify-content-center">
+
+                        <!-- 5. Activity / Extra -->
+                        <div class="col-lg-3 col-6">
+                            <div class="life-card">
+                                <img src="./pics/Life-at-rooh/Exersice_hall.jpeg" alt="Activity" class="life-img">
+                                <div class="life-overlay">
+                                    <h4>Exersice Hall</h4>
+                                    <p>Supportive Therapy Sessions</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Interior -->
+                        <div class="col-lg-3 col-6">
+                            <div class="life-card">
+                                <img src="./pics/Life-at-rooh/tar.jpeg" alt="Interior" class="life-img">
+                                <div class="life-overlay">
+                                    <h4>
+
+                                    </h4>
+                                    <p>Healing Environment</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. Fitness / Gym -->
+                        <div class="col-lg-3 col-6">
+                            <div class="life-card">
+                                <img src="./pics/Life-at-rooh/westren-toilet.jpeg" alt="Fitness" class="life-img">
+                                <div class="life-overlay">
+                                    <h4>Modren Washrooms</h4>
+                                    <p>Well-Maintained Facilities</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <div class="life-card">
+                                <img src="./pics/Life-at-rooh/h1.jpeg" alt="Fitness" class="life-img">
+                                <div class="life-overlay">
+                                    <h4>Waiting Area</h4>
+                                    <p>Welcoming Lounge</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <div class="life-card">
+                                <img src="./pics/Life-at-rooh/Namaz.jpeg" alt="Fitness" class="life-img">
+                                <div class="life-overlay">
+                                    <h4>Namaz Area</h4>
+                                    <p>Peaceful Space</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <div class="life-card">
+                                <img src="./pics/Life-at-rooh/kitchen.jpeg" alt="Fitness" class="life-img">
+                                <div class="life-overlay">
+                                    <h4>kitchen</h4>
+                                    <p>Nutritious Meal Preparation</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="text-center mt-5">
+                <button id="viewMoreLifeBtn" class="btn-sukoon" onclick="toggleLifeGallery()">View More <i
+                        class="fa-solid fa-angle-down"></i></button>
+                <button id="viewLessLifeBtn" class="btn-sukoon" onclick="toggleLifeGallery()"
+                    style="display: none;">View Less <i class="fa-solid fa-angle-up"></i></button>
+            </div>
+
+        </div>
+    </section> <!-- Toggle Script -->
+    <script>
+        function toggleLifeGallery() {
+            const hiddenGallery = document.querySelector('.hidden-gallery');
+            const viewMoreBtn = document.getElementById('viewMoreLifeBtn');
+            const viewLessBtn = document.getElementById('viewLessLifeBtn');
+
+            if (hiddenGallery.style.display === "none") {
+                hiddenGallery.style.display = "block"; // Show
+                viewMoreBtn.style.display = "none";
+                viewLessBtn.style.display = "inline-block";
+            } else {
+                hiddenGallery.style.display = "none"; // Hide
+                viewMoreBtn.style.display = "inline-block";
+                viewLessBtn.style.display = "none";
+
+                // Scroll back slightly
+                document.getElementById('life-at-sukoon').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+    <!--CEOOOO-->
+    <section class="team-section" id="team" data-aos="fade-up">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <span class="section-subtitle">Leadership</span>
+                <h2 class="section-title">Meet Our Visionaries</h2>
+
+            </div>
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-5 col-md-6 mb-5 mb-lg-0">
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                        <div class="img-wrapper">
+                            <img src="./pics/CEO-2.png" alt="Founder Name" class="member-img">
+                        </div>
+
+                        <div class="member-info">
+                            <h3 class="name">Ch. Muhammad Tayyab Ahmad Gujjar</h3>
+                            <span class="role">Clinical Psychologist (BSAP,MSCP)</span>
+
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/muhammad-tayyab-ahmad-581a171ab"><i
+                                        class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-6">
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="img-wrapper">
+                            <img src="./pics/CEO.png" alt="Co-Founder Name" class="member-img">
+                        </div>
+
+                        <div class="member-info">
+                            <h3 class="name">Syed Mudassar Abbas Bukhari</h3>
+                            <span class="role">Clinical Psychologist (BSAP,MSCP)</span>
+
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/mudassar-abbas-b5a02620b"><i
+                                        class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--footerrrrrrrrr-->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Logo & About -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-logo mb-3">
+                        <img src="./pics/logoo.png" alt="Rooh Rehabilitation Logo" style="height: 60px;">
+                    </div>
+                    <p class="text-white-50">
+                        Rooh Rehabilitation Center is dedicated to providing compassionate care for addiction recovery
+                        and mental health, helping individuals rebuild their lives with dignity and hope.
+                    </p>
+                    <div class="social-links mt-3">
+                        <a href=" https://www.facebook.com/share/14eEUy5AWsA/" class="text-white me-3"><i
+                                class="fab fa-facebook-f"></i></a>
+
+                        <a href=" https://www.instagram.com/roohrehabilitationcenter?igsh=MWN0d2NiaGdkbG5qdg=="
+                            class="text-white me-3"><i class="fab fa-instagram "></i></a>
+                        <a href="https://www.tiktok.com/@roohrehabilitationcenter?_r=1&_t=ZS-94DhbyNnaDs "
+                            class="text-white me-3"><i class="fab fa-tiktok "></i></a>
+                        <a href=" https://www.linkedin.com/company/rooh-rehabilitation-center/ "
+                            class="text-white me-3"><i class="fab fa-linkedin "></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-white mb-3">Contact Us</h5>
+                    <ul class="list-unstyled text-white-50 contact-info">
+                        <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +92 339 3217672</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2 text-primary"></i> +92 314 3217672</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2 text-primary"></i> roohehabilitation@gmail.com
+                        </li>
+                        <li><i class="fas fa-map-marker-alt me-2 text-primary"></i> Tahli Chowk Y Block New Satellite
+                            Town Sargodha, Sargodha 40100</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Map -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-white mb-3">Find Us</h5>
+                    <div class="footer-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54086.71031847369!2d72.6169024216797!3d32.084949000000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392177002fa09613%3A0xd864a196e1debab2!2sNew%20satellite%20town%20Y%20BLOCK%20*2A!5e0!3m2!1sen!2s!4v1768450656274!5m2!1sen!2s"
+                            width="100%" height="200" style="border:0; border-radius: 10px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 pt-4 border-top border-secondary">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-white-50 mb-0">&copy; 2026 rooh Rehabilitation. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-white-50 mb-0">Designed by <a href="http://codedclouds.org"><span
+                                class="text-primary">CodedClouds</span></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--popoverr-->
+    <div id="bookingPopover" class="popover-overlay">
+        <div class="popover-box">
+            <span id="closePopover" class="close-btn">&times;</span>
+            <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 22px;">Call to Book</h3>
+            <div class="phone-list">
+                <a href="tel:03143217672">📞 0314-3217672</a>
+                <a href="tel:03393217672">📞 0339-3217672</a>
+                <a href="tel:03051257672">📞 0305-1257672</a>
+                <!-- Email link with fix -->
+                <a href="mailto:roohehabilitation@gmail.com" class="email-link">
+                    <i class="fas fa-envelope me-2"></i> roohehabilitation@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Popover Overlay */
+        .popover-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font);
+        }
+
+        /* Popover Box */
+        .popover-box {
+            background-color: var(--healing);
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 350px;
+            padding: 30px;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: popIn 0.3s ease-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Close Cross (X) */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: var(--accent);
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: var(--primary);
+        }
+
+        /* Phone & Email List */
+        .phone-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .phone-list a {
+            background-color: var(--light);
+            color: var(--accent);
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            /* Email fix starts here */
+            display: block;
+            word-break: break-word;
+        }
+
+        /* Specifically for long email IDs */
+        .email-link {
+            font-size: 14px !important;
+            /* Font thora chota kiya taake fit aye */
+            padding: 12px 10px !important;
+        }
+
+        .phone-list a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background-color: var(--dark);
+        }
+    </style>
+
+    <script>
+        // Dono buttons ko select karein
+        const navBtn = document.getElementById("myBookBtn"); // Nav wala button
+        const heroBtn = document.getElementById("heroBookBtn"); // Hero wala button (Aapne jo naya btn diya)
+
+        const popoverOverlay = document.getElementById("bookingPopover");
+        const closeBtn = document.getElementById("closePopover");
+
+        // Function jo popover open karega
+        const openPopover = () => {
+            popoverOverlay.style.display = "flex";
+        };
+
+        // Nav button trigger
+        if (navBtn) {
+            navBtn.addEventListener("click", openPopover);
+        }
+
+        // Hero button trigger
+        if (heroBtn) {
+            heroBtn.addEventListener("click", (e) => {
+                e.preventDefault(); // Agar link hai to page jump na kare
+                openPopover();
+            });
+        }
+
+        // Cross (X) pe click ho to band kar do
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                popoverOverlay.style.display = "none";
+            });
+        }
+
+        // Box k bahar click ho to band kar do
+        window.addEventListener("click", (e) => {
+            if (e.target === popoverOverlay) {
+                popoverOverlay.style.display = "none";
+            }
+        });
+    </script>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+</body>
+
+</html>

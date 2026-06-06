@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Professional Care</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: rgb(195, 146, 22);      /* Gold */
+            --accent: #FFFFFF;                 /* White */
+            --healing: #1A1A1A;                /* Card Background */
+            --dark: #000000;                   /* Main Background */
+            --light: #222222;                  /* Borders/Footer */
+            --font: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font);
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--accent);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background-color: rgba(0,0,0,0.95);
+            border-bottom: 1px solid var(--light);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar .logo img {
+            max-height: 55px;
+            filter: drop-shadow(0 0 5px rgba(195, 146, 22, 0.3));
+        }
+
+        .home-btn {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 8px 25px;
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            font-weight: 500;
+            transition: 0.4s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .home-btn:hover {
+            background-color: var(--primary);
+            color: black;
+            box-shadow: 0 0 15px rgba(195, 146, 22, 0.4);
+        }
+        /* --- HEADER SECTION --- */
+        .team-header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: linear-gradient(to bottom, #0a0a0a, #000);
+        }
+
+        .team-header h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .team-header p {
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* --- TEAM GRID --- */
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- TEAM CARD --- */
+        .team-card {
+            background: var(--healing);
+            border: 1px solid #222;
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: 0.4s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(195, 146, 22, 0.1);
+        }
+
+        .team-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(195, 146, 22, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--primary);
+            transition: 0.4s;
+        }
+
+        .team-card:hover .icon-box {
+            background: var(--primary);
+            color: black;
+        }
+
+        .team-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .team-card span {
+            display: block;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .team-card p {
+            font-size: 0.85rem;
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        /* --- MARQUEE TAG --- */
+        .team-footer-marquee {
+            background: var(--light);
+            padding: 15px 0;
+            border-top: 1px solid var(--primary);
+            border-bottom: 1px solid var(--primary);
+        }
+
+        marquee {
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .team-header h1 {
+                font-size: 2.2rem;
+            }
+            .team-container {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 Grid for Mobile */
+                gap: 15px;
+                padding: 15px;
+            }
+            .team-card {
+                padding: 25px 15px;
+            }
+            .team-card h3 {
+                font-size: 1.1rem;
+            }
+            .icon-box {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .team-container {
+                grid-template-columns: 1fr; /* Single column on very small phones */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../pics/logoo.png" alt="Rooh Logo">
+        </div>
+        <a href="../index.html" class="home-btn">Back to Home</a>
+    </nav>
+
+    <section class="team-header">
+        <h1>Our Expert Team</h1>
+        <p>A multi-disciplinary team of dedicated professionals committed to your mental health and long-term recovery.</p>
+    </section>
+
+    <div class="team-container">
+        
+        <div class="team-card">
+            <div class="icon-box"><i class="fa-solid fa-brain"></i></div>
+            <span>Expert Care</span>
+            <h3>Clinical Psychologists</h3>
+            <p>Specialists in psychotherapy, assessments, and emotional regulation.</p>
+        </div>
+
+        <div class="team-card">
+            <div class="icon-box"><i class="fa-solid fa-user-doctor"></i></div>
+            <span>Medical Expert</span>
+            <h3>Psychiatrists</h3>
+            <p>Experts in diagnosis and medical management of psychiatric conditions.</p>
+        </div>
+
+        <div class="team-card">
+            <div class="icon-box"><i class="fa-solid fa-stethoscope"></i></div>
+            <span>Health Care</span>
+            <h3>Medical Officers</h3>
+            <p>Ensuring physical health monitoring and clinical support 24/7.</p>
+        </div>
+
+        <div class="team-card">
+            <div class="icon-box"><i class="fa-solid fa-book-quran"></i></div>
+            <span>Spiritual Guidance</span>
+            <h3>Religious Scholar</h3>
+            <p>Providing spiritual counseling and moral support for holistic healing.</p>
+        </div>
+
+        <div class="team-card">
+            <div class="icon-box"><i class="fa-solid fa-handshake-angle"></i></div>
+            <span>Recovery Support</span>
+            <h3>Addiction Counselor</h3>
+            <p>Dedicated support for overcoming chemical and behavioral dependencies.</p>
+        </div>
+
+    </div>
+
+    <div class="team-footer-marquee">
+        <marquee scrollamount="8">
+            Professional Team • Compassionate Care • 24/7 Support • Ethical Treatment • Holistic Recovery • Expert Specialists • Confidential Environment
+        </marquee>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: #444; font-size: 0.9rem;">
+        &copy; 2026 ROOH REHABILITATION CENTER. All professionals are board-certified.
+    </footer>
+
+</body>
+</html>

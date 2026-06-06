@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Rooh Rehabilitation</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: rgb(195, 146, 22);      
+            --accent: #FFFFFF;       
+            --healing: #111111;      
+            --dark: #000000;         
+            --light: #222222;        
+            --font: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--dark);
+            color: var(--accent);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background-color: rgba(0,0,0,0.95);
+            border-bottom: 1px solid var(--light);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar .logo img {
+            max-height: 55px;
+            filter: drop-shadow(0 0 5px rgba(195, 146, 22, 0.3));
+        }
+
+        .home-btn {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 8px 25px;
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            font-weight: 500;
+            transition: 0.4s ease;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .home-btn:hover {
+            background-color: var(--primary);
+            color: black;
+            box-shadow: 0 0 15px rgba(195, 146, 22, 0.4);
+        }
+
+        /* --- HERO SECTION (FIXED) --- */
+        .hero-cover {
+            position: relative;
+            height: 65vh; 
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), 
+                        url('../pics/galary/cv2.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax Effect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 800;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            margin: 0;
+        }
+
+        /* --- ABOUT CONTENT --- */
+        .about-container {
+            padding: 100px 8%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-text h2 {
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: #bbb;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            border: 1px solid var(--light);
+            padding: 15px;
+            background: var(--healing);
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: translateY(-10px);
+            filter: brightness(1.1);
+        }
+
+        /* --- VISION & MISSION CARDS --- */
+        .cards-section {
+            padding: 0 8% 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: var(--healing);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .info-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(195, 146, 22, 0.1);
+        }
+
+        .info-card i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            font-size: 16px;
+            color: #ddd;
+            font-style: italic;
+        }
+
+        /* --- MOBILE VIEW --- */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 60px 5%;
+            }
+            .about-text h2::after { left: 50%; transform: translateX(-50%); }
+            .hero-cover { height: 45vh; background-attachment: scroll; }
+            
+            .cards-section {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 grid for mobile as requested */
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cards-section {
+                grid-template-columns: 1fr; /* Single col for very small screens */
+            }
+            .hero-content h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../pics/logoo.png" alt="Rooh Logo">
+        </div>
+        <a href="../index.html" class="home-btn">Back to Home</a>
+    </nav>
+
+    <header class="hero-cover">
+        <div class="hero-content">
+            <h1>About Us</h1>
+        </div>
+    </header>
+
+    <section class="about-container">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>Rooh Rehabilitation Center is a dedicated mental health and addiction treatment facility located in Sargodha, committed to restoring hope, healing lives, and rebuilding families.</p>
+            <p>Founded with a vision to provide compassionate, ethical, and evidence-based care, Rooh Rehabilitation Center serves individuals struggling with substance use disorders, psychological distress, and behavioral challenges.</p>
+        </div>
+        <div class="about-image">
+            <img src="../pics/galary/ceos.png" alt="CEO Rooh Rehab">
+        </div>
+    </section>
+
+    <section class="cards-section">
+        <div class="info-card">
+            <i class="fa-solid fa-eye"></i>
+            <h3>Our Vision</h3>
+            <p>"To create a society where individuals battling addiction are treated with dignity, respect, and professional care—empowering them to live healthy lives."</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fa-solid fa-bullseye"></i>
+            <h3>Our Mission</h3>
+            <p>To provide high-quality, structured, and compassionate rehabilitation services through evidence-based therapies and expert medical supervision.</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h3>Our Values</h3>
+            <p>Empathy, Confidentiality, Excellence, and Integrity. Every patient is a soul (Rooh) that deserves a second chance at life.</p>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 50px; border-top: 1px solid var(--light); color: #555;">
+        &copy; 2026 Rooh Rehabilitation Center. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

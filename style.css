@@ -1,0 +1,230 @@
+/* ========================
+   SUKOON HERO SECTION (NEW THEME)
+   ======================== */
+:root {
+    --sukoon-blue: #0d6efd;
+    --sukoon-red: #dc3545;
+    --sukoon-green: #69937f;
+    --sukoon-dark: #212529;
+    --sukoon-light: #f8f9fa;
+}
+
+.sukoon-hero {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- LEFT SIDE --- */
+.hero-badge {
+    background: rgba(13, 110, 253, 0.1); /* Light Blue BG */
+    color: var(--sukoon-dark);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+.hero-text-box h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--sukoon-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, var(--sukoon-blue), var(--sukoon-green));
+    -webkit-background-clip : text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtext {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 35px;
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.hero-action-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary-sukoon {
+    background: var(--sukoon-red); /* Red Button (Urgency) */
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+.btn-primary-sukoon:hover {
+    background: #b02a37;
+    transform: translateY(-3px);
+    color: white;
+}
+
+.btn-outline-sukoon {
+    background: transparent;
+    color: var(--sukoon-blue);
+    border: 2px solid var(--sukoon-blue);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-outline-sukoon:hover {
+    background: var(--sukoon-blue);
+    color: white;
+}
+
+/* Stats */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.stat-box h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--sukoon-blue);
+    margin: 0;
+}
+
+.stat-box p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+}
+
+.stat-divider {
+    width: 2px;
+    height: 40px;
+    background-color: #ddd;
+}
+
+/* --- RIGHT SIDE (VISUALS) --- */
+.hero-image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+/* Main Image (Organic Shape) */
+.main-img-wrapper img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 30px 30px 200px 30px; /* Unique Shape */
+    box-shadow: 20px 20px 0px var(--sukoon-blue); /* Solid Shadow Effect */
+    position: relative;
+    z-index: 2;
+}
+
+/* Floating Cards */
+.float-card {
+    position: absolute;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 3;
+    animation: float 4s ease-in-out infinite;
+    min-width: 200px;
+}
+
+.icon-box {
+    width: 45px; height: 45px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.bg-blue { background: var(--sukoon-blue); }
+.bg-green { background: var(--sukoon-green); }
+
+.float-card h5 { margin: 0; font-size: 14px; font-weight: 700; color: var(--sukoon-dark); }
+.float-card small { font-size: 11px; color: #666; }
+
+/* Positions */
+.card-top { top: 10%; right: 5%; animation-delay: 0s; }
+.card-bottom { bottom: 15%; left: 0; animation-delay: 2s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Background Shapes */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.1;
+}
+
+.shape-1 {
+    width: 300px; height: 300px;
+    background: var(--sukoon-blue);
+    top: -50px; right: -50px;
+}
+
+.shape-2 {
+    width: 200px; height: 200px;
+    background: var(--sukoon-red);
+    bottom: 0; left: 50px;
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+@media (max-width: 991px) {
+    .sukoon-hero {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-text-box h1 { font-size: 2.5rem; }
+    .hero-subtext { margin: 0 auto 30px; }
+    .hero-action-btns { justify-content: center; margin-bottom: 40px; }
+    .hero-stats { justify-content: center; }
+
+    .hero-image-box {
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .main-img-wrapper img {
+        width: 280px;
+        height: 350px;
+        box-shadow: 10px 10px 0px var(--sukoon-blue);
+    }
+
+    /* Mobile Floating Cards */
+    .float-card {
+        position: relative;
+        top: auto !important; left: auto !important; right: auto !important; bottom: auto !important;
+        margin: 15px auto;
+        width: 80%;
+    }
+}

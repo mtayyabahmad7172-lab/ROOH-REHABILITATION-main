@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment Philosophy | Rooh Rehab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: rgb(195, 146, 22); /* Premium Gold */
+            --dark: #000000;
+            --healing: #111111;
+            --light-gold: rgba(195, 146, 22, 0.15);
+            --text-muted: #aaaaaa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: white;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- Header Section --- */
+        .treatment-hero {
+            padding: 120px 5% 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1a1a1a 0%, #000 70%);
+        }
+
+        .treatment-hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .philosophy-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .highlight-quote {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            border-left: 3px solid var(--primary);
+            background: var(--light-gold);
+            font-style: italic;
+            color: #fff;
+        }
+
+        /* --- Pillars Grid --- */
+        .pillars-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 60px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pillar-card {
+            background: var(--healing);
+            border: 1px solid #222;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(195, 146, 22, 0.15);
+        }
+
+        .pillar-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: 0.4s;
+        }
+
+        .pillar-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: var(--light-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary);
+            transition: 0.4s;
+        }
+
+        .pillar-card:hover .icon-wrapper {
+            background: var(--primary);
+            color: #000;
+            transform: rotateY(360deg);
+        }
+
+        .pillar-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+
+        .pillar-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .pillar-card ul li {
+            margin-bottom: 10px;
+            color: #d1d1d1;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pillar-card ul li i {
+            color: var(--primary);
+            font-size: 12px;
+            margin-right: 10px;
+        }
+
+        /* --- Biopsychosocial Info --- */
+        .info-strip {
+            background: var(--healing);
+            padding: 40px 5%;
+            margin: 40px 8%;
+            border-radius: 15px;
+            border: 1px dashed var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .info-strip i { font-size: 40px; color: var(--primary); }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .pillars-container {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 Grid for Tablet/Mobile */
+                padding: 40px 5%;
+                gap: 15px;
+            }
+            .treatment-hero { padding-top: 80px; }
+            .pillar-card { padding: 25px 15px; }
+            .pillar-card h3 { font-size: 18px; }
+        }
+
+        @media (max-width: 480px) {
+            .pillars-container {
+                grid-template-columns: 1fr; /* Single column for small phones */
+            }
+            .info-strip { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="treatment-hero">
+        <div data-aos="fade-down">
+            <h1>Our Treatment Philosophy</h1>
+            <p class="philosophy-intro">
+                At <strong>Rooh Rehabilitation Center</strong>, we believe that addiction is not a moral failure but a complex 
+                <span style="color: var(--primary);">biopsychosocial condition</span> that requires professional intervention and holistic care.
+            </p>
+            <div class="highlight-quote">"Restoring the Soul, Rebuilding the Future"</div>
+        </div>
+    </section>
+
+    <section class="pillars-container">
+        
+        <div class="pillar-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-wrapper"><i class="fa-solid fa-dna"></i></div>
+            <h3>Biological Care</h3>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Safe Detoxification</li>
+                <li><i class="fa-solid fa-check"></i> 24/7 Medical Supervision</li>
+                <li><i class="fa-solid fa-check"></i> Nutrition & Physical Health</li>
+                <li><i class="fa-solid fa-check"></i> Vital Signs Monitoring</li>
+            </ul>
+        </div>
+
+        <div class="pillar-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-wrapper"><i class="fa-solid fa-brain"></i></div>
+            <h3>Psychological</h3>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> CBT & Individual Therapy</li>
+                <li><i class="fa-solid fa-check"></i> Group Counseling</li>
+                <li><i class="fa-solid fa-check"></i> Motivational Interviewing</li>
+                <li><i class="fa-solid fa-check"></i> Relapse Prevention</li>
+            </ul>
+        </div>
+
+        <div class="pillar-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-wrapper"><i class="fa-solid fa-users"></i></div>
+            <h3>Social Rehab</h3>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Family Counseling</li>
+                <li><i class="fa-solid fa-check"></i> Life Skills Development</li>
+                <li><i class="fa-solid fa-check"></i> Reintegration Planning</li>
+                <li><i class="fa-solid fa-check"></i> Community Support</li>
+            </ul>
+        </div>
+
+        <div class="pillar-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-wrapper"><i class="fa-solid fa-dove"></i></div>
+            <h3>Spiritual Healing</h3>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Self-Awareness</li>
+                <li><i class="fa-solid fa-check"></i> Inner Growth & Purpose</li>
+                <li><i class="fa-solid fa-check"></i> Emotional Resilience</li>
+                <li><i class="fa-solid fa-check"></i> Mindfulness Sessions</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <div class="info-strip" data-aos="fade-up">
+        <i class="fa-solid fa-shield-heart"></i>
+        <p>Our approach integrates all four dimensions to ensure a sustainable recovery. We don't just treat the addiction; we heal the <strong>Rooh</strong> (Soul).</p>
+    </div>
+
+    <footer style="text-align: center; padding: 60px 0; color: #444; border-top: 1px solid #111;">
+        <p>© 2026 Rooh Rehabilitation Center | Sargodha</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
